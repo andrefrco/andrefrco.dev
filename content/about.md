@@ -8,10 +8,10 @@ description: A little about myself
 title: About
 ---
 
-André writes and operates software for a living. He has experience with high availability software development, observability and cloud computing.
+André develops and operates software for a living, with experience in high-availability systems, observability, and cloud computing.
 
-As a developer he found it difficult and curious to monitor applications, that's when he started to study platforms for monitoring distributed systems. This made him learn more about Cloud Computing, Operating Systems, Continuos Integration and Delivery. Today his work is dedicated to making software engineers have an easier life with more reliable systems.
+As a developer, he found monitoring applications both challenging and intriguing, which led him to explore platforms for distributed system observability. This journey deepened his knowledge of cloud computing, operating systems, and continuous integration/delivery. Today, his work focuses on helping software engineers build more reliable systems with ease.
 
-He lives in a town in southern Brazil. He loves traveling to experience different places and cultures. In his free time he enjoys playing padel tennis and mountain biking.
+He lives in southern Brazil and enjoys traveling to experience new places and cultures. In his free time, he plays padel tennis and goes mountain biking.
 
 For more information about him career and certifications, see [LinkedIn](https://www.linkedin.com/in/andrefrco/). Feel free to send messages with any questions, suggestions or any other topic.
