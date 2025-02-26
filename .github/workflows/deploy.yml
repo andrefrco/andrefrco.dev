@@ -8,6 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -16,23 +19,29 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.136.0'
           extended: true
 
       - name: Configure AWS Credentials with IAM Role
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v3
         with:
           role-to-assume: ${{ secrets.ROLE_ARN }}
           role-session-name: GitHubActions
           aws-region: us-east-1
+          audience: sts.amazonaws.com
 
       - name: Set Deployment Environment Variables
         run: |
           echo "AWS_S3_BUCKET=${{ secrets.AWS_S3_BUCKET }}" >> $GITHUB_ENV
           echo "AWS_REGION=us-east-1" >> $GITHUB_ENV
           echo "CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" >> $GITHUB_ENV
+
+      - name: Replace Deployment Variables in Hugo Config
+        run: |
+          sed -i.bak "s|s3://DUMMY_BUCKET|$AWS_S3_BUCKET|g" hugo.yaml
+          sed -i.bak "s|DUMMY_CLOUDFRONT|$CLOUDFRONT_DISTRIBUTION_ID|g" hugo.yaml
 
       - name: Cache Hugo Resources
         uses: actions/cache@v3
