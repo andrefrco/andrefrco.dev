@@ -1,0 +1,111 @@
+baseURL: "https://andrefrco.dev/"
+title: "andrefrco"
+theme: "hugo-coder"
+languageCode: "en"
+defaultContentLanguage: "en"
+pagination:
+  pagerSize: 20
+enableEmoji: true
+
+markup:
+  highlight:
+    noClasses: false
+
+params:
+  author: "André Luís Francisco"
+  description: "Site pessoal de André Luís Francisco"
+  license: '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
+  keywords:
+    - "blog"
+    - "developer"
+    - "Site Reliability Engineer"
+    - "SRE"
+    - "Observability Engineer"
+    - "Software Engineer"
+  info:
+    - "Site Reliability Engineer"
+  avatarURL: "/images/avatar.jpg"
+  faviconSVG: "/images/favicon.png"
+  favicon_32: "/images/favicon-32x32.png"
+  favicon_16: "/images/favicon-16x16.png"
+  dateFormat: "January 2, 2006"
+  colorScheme: "dark"
+  hideColorSchemeToggle: false
+  maxSeeAlsoItems: 5
+  customCSS: []
+  customSCSS: []
+  customJS: []
+  customRemoteJS: []
+
+  googleTagManager:
+    id: "${GTM_ID}"
+
+  social:
+    - name: "Github"
+      icon: "fa-brands fa-github fa-2x"
+      weight: 1
+      url: "https://github.com/andrefrco/"
+    - name: "Twitter"
+      icon: "fa-brands fa-x-twitter fa-2x"
+      weight: 3
+      url: "https://x.com/andrefrco/"
+    - name: "LinkedIn"
+      icon: "fa-brands fa-linkedin fa-2x"
+      weight: 4
+      url: "https://www.linkedin.com/in/andrefrco/"
+
+taxonomies:
+  category: "categories"
+  series: "series"
+  tag: "tags"
+  author: "authors"
+
+languages:
+  en:
+    languageName: ":uk:"
+    menu:
+      main:
+        - name: "Blog"
+          weight: 1
+          url: "posts/"
+        - name: "About"
+          weight: 2
+          url: "about/"
+  pt-br:
+    languageName: ":brazil:"
+    title: "andrefrco"
+    params:
+      author: "André Luís Francisco"
+      info: "Site Reliability Engineer"
+      description: "Site pessoal de André Luís Francisco"
+      keywords:
+        - "blog"
+        - "developer"
+        - "Site Reliability Engineer"
+        - "SRE"
+        - "Observability Engineer"
+        - "Software Engineer"
+    menu:
+      main:
+        - name: "Blog"
+          weight: 1
+          url: "posts/"
+        - name: "Sobre"
+          weight: 2
+          url: "about/"
+
+minify:
+  disableXML: true
+
+deployment:
+  targets:
+    - name: "andrefrco.dev"
+      URL: "s3://${AWS_S3_BUCKET}?region=${AWS_REGION}"
+      cloudFrontDistributionID: "${CLOUDFRONT_DISTRIBUTION_ID}"
+  matchers:
+    - pattern: "^.+\\.(js|css|svg|ttf|woff|woff2|eot|png|jpg|gif|svg|ttf)$"
+      cacheControl: "max-age=630720000, no-transform, public"
+      gzip: true
+    - pattern: "^.+\\.(html|xml|json)$"
+      gzip: true
+
