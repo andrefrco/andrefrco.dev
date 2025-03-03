@@ -1,9 +1,9 @@
 ---
+date: "2025-01-28T11:27:01-03:00"
+title: "Hello World"
+description: "Why I decided to make a personal blog"
 authors:
 - André Luís Francisco
-date: "2025-01-28T11:27:01-03:00"
-description: Why I decided to make a personal blog
-title: Hello World
 ---
 
 Hey, guys.

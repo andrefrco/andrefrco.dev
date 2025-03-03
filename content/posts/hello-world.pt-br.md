@@ -1,9 +1,9 @@
 ---
+date: "2025-01-28T11:27:01-03:00"
+title: Olá Mundo
+description: Porque eu decidi fazer um blog pessoal
 authors:
 - André Luís Francisco
-date: "2025-01-28T11:27:01-03:00"
-description: Why I decided to make a personal blog
-title: Hello World
 ---
 
 Olá, pessoal.
