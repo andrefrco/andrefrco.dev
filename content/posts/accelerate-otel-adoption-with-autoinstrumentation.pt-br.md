@@ -6,9 +6,8 @@ authors:
 - André Luís Francisco
 tags:
 - opentelemetry
-- opentelemetry-collector
 - opentelemetry-operator
-- instrumentation
+- kubernetes
 categories:
 - observability
 ---
@@ -48,7 +47,7 @@ Essa arquitetura permite que o Operador detecte automaticamente aplicações e i
 
 O diagrama abaixo mostra como o Operador funciona, ilustrando o fluxo desde o webhook de mutação interceptando solicitações de deployment até os agentes de instrumentação coletando e enviando dados de telemetria para os sistemas de backend.
 
-![Como o Operador Funciona](assets/how-otel-operator-works.png)  
+![Como o Operador Funciona](/images/how-otel-operator-works.png)  
 _Imagem 1: Como a Instrumentação Automática Funciona com o OpenTelemetry Operator_
 
 ### Configurando Auto-Instrumentação com o OpenTelemetry Operator
