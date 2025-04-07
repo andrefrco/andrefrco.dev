@@ -1,4 +1,4 @@
 ---
 title: "Observability"
-description: "Articles on monitoring, logging, tracing, and metrics for software systems."
+description: "Articles on monitoring, logging, tracing, metrics and profiling for software systems."
 ---
